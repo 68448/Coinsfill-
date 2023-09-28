@@ -6,18 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "export": "next build && next export",
+    "lint": "next lint",
+    "build-static": "next build && next export && npm run build-static-repair-index",
+    "build-static-repair-index": "replace-in-files --string \"/_next/static\" --replacement \"./_next/static\" out/index.html out/account.html"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.1.13",
+    "axios": "^1.5.1",
+    "framer-motion": "^10.16.4",
+    "next": "latest",
     "react": "latest",
+    "react-cropper": "^2.3.3",
     "react-dom": "latest",
-    "next": "latest"
+    "react-modal": "^3.16.1",
+    "replace-in-files-cli": "^2.2.0",
+    "storybook": "^7.4.5"
   },
   "devDependencies": {
     "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest"
   }
 }

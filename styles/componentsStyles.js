@@ -1,0 +1,1 @@
+export const yellowButton = 'radius-[50] background'
